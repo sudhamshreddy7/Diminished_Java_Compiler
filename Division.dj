@@ -1,0 +1,83 @@
+//I pledge my Honor that I have not cheated, and will not cheat, on this assignment -- Sudhamsh Reddy Dokuru
+class List extends Object {//declaring list
+ nat val;
+ List next;
+ nat setVal(nat newVal){ val=newVal;}//setters 
+}
+class Division extends Object {//contains methods related to division
+ nat div(nat a,nat b){//prints quotient and reminder repectively
+  nat q;//stores quotient
+  nat r;//stores reminder
+  while(a>b){
+   q=q+1;
+   a=a-b;
+  }
+  if(b==a){ //if a==b then reminder is set 0 and quotient is incremented
+   q=q+1;
+   r=0;
+  }
+  else{ //else reminder is b-a
+   r=b-a;
+  }
+  printNat(q);//printing quotient
+  printNat(r);//printing reminder
+ }
+}
+main {
+ Division d;//declaring d variable of Division class
+ d = new Division();//initializing division class
+ List head;//head pointer 
+ head=new List();//head pointer is also dummy pointer to keep track of list
+ nat temp_variable;
+ List travelNode;
+ travelNode=head;
+ List x;//ListNode stores new node's data
+ temp_variable=readNat();//reading the input
+ while(temp_variable>0){
+  x=new List();
+  x.setVal(temp_variable);//creating a new node 
+  travelNode.next=x;//linking the new node to the Linked List
+  travelNode=travelNode.next;//updating the list
+  temp_variable=readNat();//reading the input
+ }
+ nat i;
+ nat j;
+ j=readNat();//reads and stores i and j values
+ i=readNat();
+ nat a;
+ travelNode=head.next;
+ nat b;
+ while(i>0&&!travelNode==null){//fetching the values of a and b
+  i=i-1;
+  travelNode=travelNode.next;//traversing through the linkedlist
+ }
+ if(i>0){//if i exceedes the size of the array then print 0 0
+  printNat(0);
+  printNat(0);
+  0;
+ }
+ if(travelNode==null){//same case as above
+  printNat(0);
+  printNat(0);
+  0;
+ }
+ a=travelNode.val;
+ travelNode=head.next;
+ while(j>0&&!travelNode==null){
+  j=j-1;
+  travelNode=travelNode.next;
+ }
+ if(j>0){//if j exceedes the size of the array then print 0 0
+  printNat(0);
+  printNat(0);
+  0;
+ }
+ if(travelNode==null){
+  printNat(0);
+  printNat(0);
+  0;
+ }
+ b=travelNode.val;
+ d.div(a,b);
+ 0;
+}

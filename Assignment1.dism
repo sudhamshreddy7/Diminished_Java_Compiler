@@ -1,0 +1,23 @@
+;I pledge my Honor that I have not cheated, and will not cheat, on this assignment -- Sudhamsh Reddy Dokuru
+mov 1 1;1 stores 1 and R[0] stores 0
+mov 2 0;2 stores pointer
+rdn 3;3 stores temp and R[6] stores quotient 
+#LOOP:  beq 3 0 #END ;if R[3]==0 then end loop
+        str 2 0 3
+        add 2 2 1
+        rdn 3
+        jmp 0 #LOOP
+#END:
+rdn 5;R[4] stores i
+rdn 4;R[5] stores j
+lod 4 4 0;R[4] stores a
+lod 5 5 0;R[5] stores b
+beq 5 0 18;index out of bounce case jumps to line 21
+beq 4 0 18;index out of bounce case jumps to line 21
+#LOOP1:  bgt 5 4 #END1 ;if b>a then loop ends
+        sub 4 4 5;subtracting b from a and updating quotient
+        add 6 6 1;updating quotient
+        jmp 0 #LOOP1
+#END1:
+ptn 6;prints quotient
+ptn 4;prints reminder
